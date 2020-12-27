@@ -27,5 +27,16 @@ IMAGE_INSTALL += " \
     myir-linux-examples \
     quectel-cm \
     packagegroup-imx-core-tools \
+    packagegroup-meta-webserver-php \
+    minicom \
+    ffmpeg \
+    tcpdump \
+    python3 \
+    curl \
+    libsrtp \
+    opencv \
+    dhcp \
+    paho-mqtt-c \
+    tftp-hpa \
 "
 export IMAGE_BASENAME = "myir-image-core"
