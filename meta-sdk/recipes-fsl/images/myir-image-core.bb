@@ -35,7 +35,6 @@ IMAGE_INSTALL += " \
     curl \
     libsrtp \
     opencv \
-    dhcp \
     paho-mqtt-c \
     tftp-hpa \
 "
