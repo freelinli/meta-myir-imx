@@ -24,14 +24,10 @@ IMAGE_INSTALL += " \
     libgpiod \
     sqlite3 \
     v4l-utils \
-    myir-linux-examples \
     quectel-cm \
     packagegroup-imx-core-tools \
-    packagegroup-meta-webserver-php \
-    minicom \
     ffmpeg \
     tcpdump \
-    python3 \
     curl \
     libsrtp \
     opencv \
