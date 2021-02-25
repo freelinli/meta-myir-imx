@@ -33,5 +33,6 @@ IMAGE_INSTALL += " \
     opencv \
     paho-mqtt-c \
     tftp-hpa \
+    snake-app \
 "
 export IMAGE_BASENAME = "myir-image-core"
