@@ -16,6 +16,7 @@ KERNEL_BRANCH ?= "develop"
 LOCALVERSION = "-2.0.0"
 KERNEL_SRC ?= "git://github.com/MYiR-Dev/myir-imx-linux.git;protocol=https"
 SRC_URI = "${KERNEL_SRC};branch=${KERNEL_BRANCH}"
+SRC_URI += "file://0001-Add-snake-device.patch"
 
 SRCREV = "c5754285f3f5999ef9c90f76852769bbbefffbc2"
 
