@@ -26,5 +26,14 @@ else
     echo 30000 >  /proc/sys/vm/min_free_kbytes
 fi
 
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+echo "nameserver 202.99.160.68" >> /etc/resolv.conf
+echo "nameserver 221.130.33.52" >> /etc/resolv.conf
+echo "nameserver 221.130.33.60" >> /etc/resolv.conf
+
+wpa_passphrase ChinaNet-102 "wearefamily" >/etc/wpa_supplicant.conf
+wpa_supplicant -Dnl80211 -iwlan1 -c /etc/wpa_supplicant.conf -dd >/var/wifi_log &
+sleep 5
+udhcpc -i wlan1
 exit 0
 

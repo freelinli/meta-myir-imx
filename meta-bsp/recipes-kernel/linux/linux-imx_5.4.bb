@@ -12,16 +12,17 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 
 DEPENDS += "lzop-native bc-native"
 
-KERNEL_BRANCH ?= "develop"
+KERNEL_BRANCH ?= "snake"
 LOCALVERSION = "-2.0.0"
-KERNEL_SRC ?= "git://github.com/MYiR-Dev/myir-imx-linux.git;protocol=https"
+#KERNEL_SRC ?= "git://github.com/freelinli/snake-imx-linux.git;protocol=https"
+KERNEL_SRC ?= "git:///media/freelin/sdc/home.freelin.myir-imx-linux;protocol=file"
 SRC_URI = "${KERNEL_SRC};branch=${KERNEL_BRANCH}"
-SRC_URI += "\
-	file://0001-Add-snake-device.patch \
-	file://0002-RTL8723-Add-Wifi-driver.patch \
-	"
 
-SRCREV = "c5754285f3f5999ef9c90f76852769bbbefffbc2"
+#SRC_URI += "\
+#	file://0001-Add-snake-device.patch \
+#	"
+
+SRCREV = "${AUTOREV}"
 
 FILES_${KERNEL_PACKAGE_NAME}-base += "${nonarch_base_libdir}/modules/${KERNEL_VERSION}/modules.builtin.modinfo "
 
@@ -42,8 +43,11 @@ do_copy_defconfig () {
     if [ ${DO_CONFIG_V7_COPY} = "yes" ]; then
         # copy latest imx_v7_defconfig to use for mx6, mx6ul and mx7
         mkdir -p ${B}
-        cp ${S}/arch/arm/configs/myd_y6ulx_defconfig ${B}/.config
-        cp ${S}/arch/arm/configs/myd_y6ulx_defconfig ${B}/../defconfig
+        #cp ${S}/arch/arm/configs/myd_y6ulx_defconfig ${B}/.config
+        #cp ${S}/arch/arm/configs/myd_y6ulx_defconfig ${B}/../defconfig
+        cp ${S}/arch/arm/configs/snake_defconfig ${B}/.config
+        cp ${S}/arch/arm/configs/snake_defconfig ${B}/../defconfig
+        #cp ${S}/drivers/net/wireless/rtl8723BU/* ${B}/include/ -rap
     else
         # copy latest imx_v8_defconfig to use for mx8
         mkdir -p ${B}
