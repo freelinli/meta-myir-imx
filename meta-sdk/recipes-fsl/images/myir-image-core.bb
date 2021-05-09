@@ -34,5 +34,6 @@ IMAGE_INSTALL += " \
     paho-mqtt-c \
     tftp-hpa \
     snake-app \
+    snake-version \
 "
 export IMAGE_BASENAME = "myir-image-core"
