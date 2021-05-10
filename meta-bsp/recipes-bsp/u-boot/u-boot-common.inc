@@ -11,10 +11,10 @@ PE = "1"
 #SRCREV = "3c99166441bf3ea325af2da83cfe65430b49c066"
 #SRC_URI = "git://git.denx.de/u-boot.git"
 
-UBOOT_SRC ?= "git://github.com/MYiR-Dev/myir-imx-uboot.git;protocol=https"
-SRCBRANCH = "develop"
+UBOOT_SRC ?= "git://github.com:freelinli/imx-uboot.git;protocol=ssh"
+SRCBRANCH = "master"
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH} \
 "
-SRCREV = "e39fca1ba885527a475debcf50aff2656e57199f"
+SRCREV = "0106e2b56cecd69ef7dbd026cd6d488202cd9f9a"
 
 S = "${WORKDIR}/git"
