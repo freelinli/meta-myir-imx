@@ -1,6 +1,6 @@
 #!/bin/sh
 
-udhcpc -i eth0
+#udhcpc -i eth0
 
 echo "start MQTTAsync_publish process"
 /opt/apps/MQTTAsync_publish &
