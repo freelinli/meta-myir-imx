@@ -2,11 +2,14 @@
 
 #udhcpc -i eth0
 
-echo "start MQTTAsync_publish process"
-/opt/apps/MQTTAsync_publish &
+echo "start network process"
+/opt/apps/network &
 
-echo "start MQTTAsync_subscribe process"
-/opt/apps/MQTTAsync_subscribe &
+# echo "start MQTTAsync_publish process"
+# /opt/apps/MQTTAsync_publish &
+
+# echo "start MQTTAsync_subscribe process"
+# /opt/apps/MQTTAsync_subscribe &
 
 echo "start cloud_protocol process"
 /opt/apps/cloud_protocol &
