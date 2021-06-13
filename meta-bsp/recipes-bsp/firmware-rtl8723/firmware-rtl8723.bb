@@ -15,11 +15,19 @@ SRC_URI = " \
 
 S = "${WORKDIR}"
 
-do_deploy (){
-    install -d ${D}${base_libdir}/firmware/rtlwifi/
-    cp -rfv ${S}/*  ${D}${base_libdir}/firmware/rtlwifi/
+do_install (){
+    install -d 0775  ${D}/lib/firmware/rtlwifi/
+    install -d 0775  ${D}/lib/firmware/rtl_bt/
+    install -m 0775  ${S}/rtl8723b_config.bin  ${D}/lib/firmware/rtlwifi/
+    install -m 0775  ${S}/rtl8723b_fw.bin  ${D}/lib/firmware/rtlwifi/
+    install -m 0775  ${S}/rtl8723bu_ap_wowlan.bin  ${D}/lib/firmware/rtlwifi/
+    install -m 0775  ${S}/rtl8723bu_bt.bin  ${D}/lib/firmware/rtlwifi/
+    install -m 0775  ${S}/rtl8723bu_nic.bin  ${D}/lib/firmware/rtlwifi/
+    install -m 0775  ${S}/rtl8723bu_wowlan.bin  ${D}/lib/firmware/rtlwifi/
+    cp  ${D}/lib/firmware/rtlwifi/*  ${D}/lib/firmware/rtl_bt/
 }
 
 
-FILES_${PN} = "${base_libdir}/firmware/rtlwifi/ \
+FILES_${PN} = "/lib/firmware/rtlwifi/ \
+               /lib/firmware/rtl_bt/ \
 "
