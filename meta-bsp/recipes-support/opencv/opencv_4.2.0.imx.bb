@@ -46,10 +46,10 @@ do_unpack_extra_append() {
 
 do_install_append() {
     ln -sf opencv4/opencv2 ${D}${includedir}/opencv2
-    install -d ${D}${datadir}/OpenCV/samples/data
-    cp -r ${S}/samples/data/* ${D}${datadir}/OpenCV/samples/data
-    install -d ${D}${datadir}/OpenCV/samples/bin/
-    cp -f bin/example_* ${D}${datadir}/OpenCV/samples/bin/
+#    install -d ${D}${datadir}/OpenCV/samples/data
+#    cp -r ${S}/samples/data/* ${D}${datadir}/OpenCV/samples/data
+#    install -d ${D}${datadir}/OpenCV/samples/bin/
+#    cp -f bin/example_* ${D}${datadir}/OpenCV/samples/bin/
 }
 
 FILES_${PN}-samples += "${datadir}/OpenCV/samples"
