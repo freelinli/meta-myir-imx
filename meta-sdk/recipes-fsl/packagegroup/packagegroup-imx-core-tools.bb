@@ -20,9 +20,9 @@ RDEPENDS_${PN} = " \
     mtd-utils-ubifs \
     procps \
     iw \
-    can-utils \
     ntpdate \
     mmc-utils \
     udev-extraconf \
+    dosfstools \
     e2fsprogs-resize2fs \
 "
